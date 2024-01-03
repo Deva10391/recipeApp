@@ -18,7 +18,7 @@ app.listen(port, () => {
 });
 
 mongoose
-    .connect(process.env.MONGO_URI || 'mongodb+srv://devashish15262:recipeAppP123@recipes.czomcje.mongodb.net/recipes?retryWrites=true&w=majority')
+    .connect(process.env.MONGO_URI)
     .then(() => {
         console.log('Connected')
     })
