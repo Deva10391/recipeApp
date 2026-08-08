@@ -14,6 +14,7 @@ export const createOne = async (req, res) => {
     const recipe = new RecipeModel(req.body);
     try {
         const response = await recipe.save();
+        console.log(recipe, response);
         res.json(response);
     } catch (err) {
         res.json(err);
@@ -21,7 +22,6 @@ export const createOne = async (req, res) => {
 }
 
 export const saveOne = async (req, res) => {
-    console.log(req.body)
     try {
         const recipe = await RecipeModel.findById(req.body.recipeID);
         const user = await UserModel.findById(req.body.userID);

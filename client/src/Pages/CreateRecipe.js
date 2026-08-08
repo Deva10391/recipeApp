@@ -38,7 +38,6 @@ export default function CreateRecipe() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setRecipe({ ...recipe, [name]: value });
-    console.log(recipe);
   }
 
   const handleAddIngredient = () => {
@@ -63,6 +62,7 @@ export default function CreateRecipe() {
           name="name"
           value={recipe.name}
           onChange={handleChange}
+          required="true"
         />
         <label htmlFor="description">Description</label>
         <textarea
@@ -70,6 +70,7 @@ export default function CreateRecipe() {
           name="description"
           value={recipe.description}
           onChange={handleChange}
+          required="true"
         ></textarea>
         <label htmlFor="ingredients">Ingredients</label>
         {recipe.ingredients.map((ingredient, index) => (
@@ -90,6 +91,7 @@ export default function CreateRecipe() {
           name="instructions"
           value={recipe.instructions}
           onChange={handleChange}
+          required="true"
         ></textarea>
         <label htmlFor="imageUrl">Image URL</label>
         <input
@@ -98,6 +100,7 @@ export default function CreateRecipe() {
           name="imageUrl"
           value={recipe.imageUrl}
           onChange={handleChange}
+          required="true"
         />
         <label htmlFor="cookingTime">Cooking Time (minutes)</label>
         <input
@@ -106,6 +109,7 @@ export default function CreateRecipe() {
           name="cookingTime"
           value={recipe.cookingTime}
           onChange={handleChange}
+          required="true"
         />
         <button type="submit">Create Recipe</button>
       </form>

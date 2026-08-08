@@ -6,7 +6,6 @@ const t = process.env.JWT_SECRET;
 
 export const registerUser = async (req, res) => {
     const { username, password } = req.body;
-    console.log(username, password);
     const user = await UserModel.findOne({ username });
     if (user) {
         return res.json({ message: 'user already exists' });

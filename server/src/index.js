@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
@@ -12,16 +13,16 @@ app.use(cors());
 app.use('/auth', userRouter);
 app.use('/recipe', recipeRouter);
 
-const port = 3001;
-app.listen(port, () => {
-    console.log(`activated on: ${port}`);
-});
-
 mongoose
     .connect(process.env.MONGO_URI)
     .then(() => {
-        console.log('Connected')
+        console.log('MongoDB connected');
     })
     .catch((err) => {
         console.error(err);
     });
+
+const port = 3001;
+app.listen(port, () => {
+    console.log(`server activated on: ${port}`);
+});
