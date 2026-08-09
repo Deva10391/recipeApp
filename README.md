@@ -1,4 +1,6 @@
 # Recipe App
+ 
+A full-stack recipe management app — create, view, and save recipes.
 
 ## Setup
 
