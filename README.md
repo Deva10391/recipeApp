@@ -32,8 +32,8 @@ http://localhost:3001
 ## Environment
 
 Create `server/.env`:
-
+again- in server directory
 ```env
 MONGO_URI=your_mongodb_connection_string
-PORT=3001
+JWT_SECRET=your_jwt_secret
 ```

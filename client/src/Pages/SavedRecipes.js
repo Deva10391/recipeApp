@@ -13,7 +13,6 @@ export default function SavedRecipes() {
       try {
         const response = await axios.get(`http://localhost:3001/recipe/savedRecipes/${userID}`, 
         { headers: { authorization: cookies.access_token } });
-        console.log(response.data.SavedRecipes);
         setSavedRecipes(response.data.savedRecipes);
 
       } catch (err) {

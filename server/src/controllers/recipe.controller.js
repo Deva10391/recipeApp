@@ -14,7 +14,6 @@ export const createOne = async (req, res) => {
     const recipe = new RecipeModel(req.body);
     try {
         const response = await recipe.save();
-        console.log(recipe, response);
         res.json(response);
     } catch (err) {
         res.json(err);
